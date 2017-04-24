@@ -1,4 +1,6 @@
 #include "Node.h"
+#include <iostream>
+#include <fstream>
 
 Node::Node()
 {
