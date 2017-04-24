@@ -1,3 +1,8 @@
+//
+// Node.cpp
+// Algorithms Project 2
+//
+
 #include "Node.h"
 
 Node::Node()

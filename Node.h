@@ -1,13 +1,15 @@
+//
+// Node.h
+// Algorithms Project 2
+//
+
 #ifndef NODE_H
 #define NODE_H
-
-#include <iostream>
-using namespace std;
 
 class Node
 {
   public:
-    // default constructor
+    // Default constructor
     Node();
 
     // Constructor takes information
@@ -36,14 +38,14 @@ class Node
     double Get_Latitude() { return m_Latitude; }
     void Set_Latitude(float val) { m_Latitude = val; }
 
-    //This prints the information of the Node
-    //NOT FINISHED!!!!!!!!!!!!!!!
+    // This prints the information of the Node
+    // NOT FINISHED!!!!!!!!!!!!!!!
     void print_node();
 
   private:
-    int m_id;                 //ID of the Node
-    string m_label;           //City| Rolla, Sedalia, etc.
-    string m_geocode_append;  //State
+    int m_id;                 // ID of the Node
+    string m_label;           // City| Rolla, Sedalia, etc.
+    string m_geocode_append;  // State
     string m_Country;
     double m_Longitude;
     bool m_Internal;          // True 1 or False 0

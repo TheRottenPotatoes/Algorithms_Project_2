@@ -1,9 +1,29 @@
+//
+// Main.cpp
+// Algorithms Project 2
+//
+
 #include <iostream>
+#include <cmath>
+#include <fstream>
+#include <cstdlib>
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+  // Check to see if Program runs
+  cout << "Hello world!" << endl;
+
+  // Create a file reading object
+  char filename[50];
+  ifstream fin;
+  fin.open("KentuckyDatabase.txt" )
+
+
+
+
+
+  return 0;
+
 }
