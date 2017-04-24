@@ -16,10 +16,10 @@ struct AdjList
 };
 
 // struct to represent a graph. A graph is an array of adjacency lists.
-// Size of array will be V (number of vertices in graph)
+// Size of array will be N (number of Nodes in graph)
 struct Graph
 {
-	int V;
+	int N;
 	struct AdjList* array;
 };
 
@@ -33,18 +33,18 @@ struct AdjListNode* newAdjListNode(int dest)
 	return newNode;
 }
 
-// function that creates a graph of V vertices
-struct Graph* createGraph(int V)
+// function that creates a graph of N Nodes
+struct Graph* createGraph(int N)
 {
 	struct Graph* graph = (struct Graph*) malloc(sizeof(struct Graph));
-	graph->V = V;
+	graph->N = N;
 
-	// Create an array of adjacency lists. Size of array will be V
-	graph->array = (struct AdjList*) malloc(V * sizeof(struct AdjList));
+	// Create an array of adjacency lists. Size of array will be N
+	graph->array = (struct AdjList*) malloc(N * sizeof(struct AdjList));
 
 	// Initialize each adjacency list as empty by making head as NULL
 	int i;
-	for (i = 0; i < V; ++i)
+	for (i = 0; i < N; ++i)
 		graph->array[i].head = NULL;
 
 	return graph;
@@ -68,11 +68,11 @@ void addEdge(struct Graph* graph, int src, int dest)
 // A utility function to print the adjacenncy list representation of graph
 void printGraph(struct Graph* graph)
 {
-	int v;
-	for (v = 0; v < graph->V; ++v)
+	int N;
+	for (N = 0; N < graph->N; ++N)
 	{
-		struct AdjListNode* pCrawl = graph->array[v].head;
-		printf("\n Adjacency list of vertex %d\n head ", v);
+		struct AdjListNode* pCrawl = graph->array[N].head;
+		printf("\n Adjacency list of Node %d\n head ", N);
 		while (pCrawl)
 		{
 			printf("-> %d", pCrawl->dest);
@@ -86,8 +86,8 @@ void printGraph(struct Graph* graph)
 int main()
 {
 	// create the graph
-	int V = 5;
-	struct Graph* graph = createGraph(V);
+	int N = 5;
+	struct Graph* graph = createGraph(N);
 	addEdge(graph, 0, 1);
 	addEdge(graph, 0, 4);
 	addEdge(graph, 1, 2);
