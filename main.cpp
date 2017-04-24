@@ -16,10 +16,10 @@ int main()
   cout << "Hello world!" << endl;
 
   // Create a file reading object
-  char filename[50];
+/*  char filename[50];
   ifstream fin;
   fin.open("KentuckyDatabase.txt" )
-
+*/
 
 
 
