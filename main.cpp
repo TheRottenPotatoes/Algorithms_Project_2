@@ -1,6 +1,6 @@
 //
 // Main.cpp
-// Algorithms Project 2
+// Algorithms Project 2 (Simple)
 //
 
 #include <iostream>
