@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "Node.h"
+//#include "Node.h"
 #include "mainfunct.h"
 
 using namespace std;
@@ -9,9 +9,13 @@ using namespace std;
 int main()
 {
 
-    Node Graph[753];
+   int Graph[755];
     ifstream fin;
     fin.open("KentuckyDataBase.txt");
-     Parser(fin,Graph, 753);
+     Parser(fin,Graph,755);
     return 0;
 }
+
+
+
+

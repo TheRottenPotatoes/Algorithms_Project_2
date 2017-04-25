@@ -7,8 +7,9 @@
 
 using namespace std;
 
-void Parser(istream &fin,Node ListNodes[],int numbNodes);
+void Parser(istream& fin,int ListNodes[],int numbNodes);
 
 
 
 #endif
+
