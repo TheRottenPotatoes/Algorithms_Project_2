@@ -1,29 +1,17 @@
-//
-// Main.cpp
-// Algorithms Project 2 (Simple)
-//
-
 #include <iostream>
-#include <cmath>
 #include <fstream>
-#include <cstdlib>
+
+#include "Node.h"
+#include "Edge.h"
+#include "mainfunct.h"
 
 using namespace std;
 
 int main()
 {
-  // Check to see if Program runs
-  cout << "Hello world!" << endl;
-
-  // Create a file reading object
-/*  char filename[50];
+  int Graph[755];
   ifstream fin;
-  fin.open("KentuckyDatabase.txt" )
-*/
-
-
-
-
+  fin.open("KentuckyDataBase.txt");
+  Parser(fin,Graph,755);
   return 0;
-
 }

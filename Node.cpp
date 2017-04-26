@@ -1,16 +1,11 @@
-//
-// Node.cpp
-// Algorithms Project 2 (Simple)
-//
-
 #include "Node.h"
 
-#include <iostream>
-using namespace std;
 
-Node::Node()
-{
-  m_id = 0;
+int Node::getID(){
+  return m_id;
 }
 
-Node::Node(int id) {}
+void Node::setID(int newDat){
+  m_id=newDat;
+  return;
+}

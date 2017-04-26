@@ -1,29 +1,34 @@
-//
-// Node.h
-// Algorithms Project 2 (Simple)
-//
-
 #ifndef NODE_H
 #define NODE_H
 
+#include <vector>
+#include <cstddef>
+
+using namespace std;
+
 class Node
 {
-  public:
-    // Default constructor
-    Node();
+public:
+  //pre:none
+  //post:makes a Node type variable
+  //creates a default node type variable
+  Node() :m_id(-1),m_parents(NULL),m_children(NULL){}
 
-    // Constructor takes information
-    Node(int id);
+  //pre:must have node to use on
+  //post:returns a int
+  //acsessor for node variable data
+  int getID();
 
-    int Get_id() { return m_id; }
-    void Set_id(int val) { m_id = val; }
+  //pre:node to use on
+  //post:changes the pri variable data in node
+  //mutator func for node class
+  void setID(int newid);
 
-    // This prints the information of the Node
-    // NOT FINISHED!!!!!!!!!!!!!!!
-    void print_node();
+private:
+  int m_id=-1;
+  vector <Node*> m_parents;
+  vector <Node*> m_children;
 
-  private:
-    int m_id;                 // ID of the Node
 };
 
-#endif // SENSOR_H
+#endif // NODE_H
