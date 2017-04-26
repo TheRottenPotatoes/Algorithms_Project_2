@@ -24,8 +24,10 @@ public:
   //mutator func for node class
   void setID(int newid);
 
-private:
   int m_id=-1;
+
+private:
+
   vector <Node*> m_parents;
   vector <Node*> m_children;
 
