@@ -5,8 +5,6 @@
 #include <fstream>
 #include "Node.h"
 
-using namespace std;
-
 void Parser(istream& fin,int ListNodes[],int numbNodes);
 
 
