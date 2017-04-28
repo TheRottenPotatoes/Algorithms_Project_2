@@ -18,6 +18,15 @@ public:
   //Comment this out for now.
   //Node() :m_id(-1),m_edges(NULL){}
 
+  //Constructor
+  Node(int);
+
+  //Destructor
+  ~Node();
+
+  //Default Constructor
+  Node();
+
   //pre:must have node to use on
   //post:returns a int
   //acsessor for node variable data

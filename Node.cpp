@@ -1,5 +1,20 @@
 #include "Node.h"
 
+//Constructor
+Node::Node(int ID){
+  this -> m_id = ID;
+}
+
+//Destructor
+Node::~Node(){
+  cout << "Node " << this -> m_id << "is destroyed" << endl;
+}
+
+//Default Constructor
+Node::Node(){
+
+}
+
 int Node::getID(){
   return m_id;
 }

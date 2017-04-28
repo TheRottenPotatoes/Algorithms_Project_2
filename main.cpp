@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 
-#include "Node.h"
 #include "Edge.h"
+#include "Node.h"
 #include "mainfunct.h"
 
 using namespace std;

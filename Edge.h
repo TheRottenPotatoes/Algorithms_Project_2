@@ -16,6 +16,15 @@ public:
   //creates a default edge type variable
   Edge() :m_name("e0"),parent_ptr(NULL),child_ptr(NULL),m_cap(0),m_flow(0){}
 
+  //Constructor
+  Edge(std::string, Node*, Node*, int, int);
+
+  //Destructor
+  ~Edge();
+
+  //Default Constructor
+  //Edge();
+
   //pre:must have edge to use on
   //post:returns a string
   //acsessor for edge variable data

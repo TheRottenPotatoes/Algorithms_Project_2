@@ -1,5 +1,20 @@
 #include "Edge.h"
 
+//Constructor
+Edge::Edge(std::string Name, Node* Parent, Node* Child,
+     int Cap, int Flow){
+  this -> m_name = Name;
+  this -> parent_ptr = Parent;
+  this -> child_ptr = Child;
+  this -> m_cap = Cap;
+  this -> m_flow = Flow;
+}
+
+//Destructor
+Edge::~Edge(){
+  cout << "Edge " << this -> m_name << "is destroyed" << endl;
+}
+
 std::string Edge::getname(){
   return m_name;
 }
