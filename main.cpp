@@ -12,6 +12,8 @@ int main()
   int Graph[755];
   ifstream fin;
   fin.open("KentuckyDataBase.txt");
+
+  //replace Graph with Array of Nodes
   Parser(fin,Graph,755);
   return 0;
 }

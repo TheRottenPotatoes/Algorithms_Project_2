@@ -3,8 +3,11 @@
 
 #include <vector>
 #include <cstddef>
+#include "Edge.h"
 
 using namespace std;
+
+class Edge;
 
 class Node
 {
@@ -12,7 +15,8 @@ public:
   //pre:none
   //post:makes a Node type variable
   //creates a default node type variable
-  Node() :m_id(-1),m_parents(NULL),m_children(NULL){}
+  //Comment this out for now.
+  //Node() :m_id(-1),m_edges(NULL){}
 
   //pre:must have node to use on
   //post:returns a int
@@ -24,12 +28,18 @@ public:
   //mutator func for node class
   void setID(int newid);
 
-  int m_id=-1;
+  void AddEdge(Edge child);
+
+  vector <Edge> GetCopyOfEdge();
+
+  Edge GetAt(int assigned);
+
+
+
 
 private:
-
-  vector <Node*> m_parents;
-  vector <Node*> m_children;
+  int m_id;
+  vector <Edge> m_edges;
 
 };
 

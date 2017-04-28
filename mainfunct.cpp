@@ -1,35 +1,54 @@
 #include "mainfunct.h"
+#include <stdlib.h>
+
+
 
 void Parser(istream& fin,int List[],int numbNodes){
-char holder;
-int label;
-int counter=0;
-
+  char holder;
+  char numb[10];
+  int source;
+  int target;
+  int counter=0;
+  int edgeCounter=0;
 
   for(int i=0;i<3;i++){
     holder=fin.get();
   }
 
   while(holder=='n' && counter<=numbNodes){
-    fin.ignore(4,'\n');
-    fin.ignore(10,'d');
-    fin.get();
-    label=fin.get();
-    cout<<label<<endl;
-
-    //List[counter].Set_id(label);
+    fin.ignore(6,'[');
     fin.ignore(200,']');
-    for(int i=0;i<4;i++){
-      holder=fin.get();
+    fin.ignore(3,'n');
+    holder=fin.get();
+    List[counter].setID(counter++);
     }
 
-    cout<<"counter"<<", ";
-    counter++;
-  }
+  counter=0;
 
-  while(fin.get(holder)){
-    fin.ignore(4,'[');
-    fin.ignore(6,' ');
+  while(holder=='e'){
+    fin.ignore(6,'[');
+    fin.ignore(10,'s');
+    fin.ignore(10,' ');
+    source=fin.get();
+    if(counter==(40-source)){
+        List[counter].AddEdge->SetParent(List[counter]);
+        fin.ignore(10,'t');
+        fin.ignore(10,' ');
+        getline(fin,numb,'\n');
+        target=atoi(numb);
+
+        List[counter].GetAt(edgeCounter)->SetChild(List[target]);
+    }else{
+      ++counter;
+      List[counter].AddEdge->SetParent(List[counter]);
+      fin.ignore(10,'t');
+      fin.ignore(10,' ');
+      getline(fin,numb,'\n');
+      target=atoi(numb);
+
+      List[counter].GetAt(edgeCounter)->SetChild(List[target]);
+
+    }
 
     //fin>>// starting node
     fin.ignore(6,' ');
