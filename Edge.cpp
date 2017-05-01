@@ -1,25 +1,24 @@
 #include "Edge.h"
 
 //Constructor
-Edge::Edge(std::string Name, Node* Parent, Node* Child,
-     int Cap, int Flow){
-  this -> m_name = Name;
-  this -> parent_ptr = Parent;
-  this -> child_ptr = Child;
-  this -> m_cap = Cap;
-  this -> m_flow = Flow;
+Edge::Edge(){
+m_name="place";
+parent_ptr=NULL;
+child_ptr=NULL;
+m_cap=0;
+m_flow=0;
 }
 
 //Destructor
 Edge::~Edge(){
-  cout << "Edge " << this -> m_name << "is destroyed" << endl;
+  //cout << "Edge " << this -> m_name << " is destroyed" << endl;
 }
 
-std::string Edge::getname(){
-  return m_name;
+string Edge::getname(){
+    return m_name;
 }
 
-void Edge::setname(std::string newname){
+void Edge::setname(string newname){
   m_name=newname;
   return;
 }
@@ -43,13 +42,21 @@ void Edge::setChild(Node newNode){
   child_ptr = &newNode;
   return;
 }
+void Edge::setNextEdge(Edge* next){
+    next_edge=next;
+    return;
+}
+
+Edge* Edge::getNextEdge(){
+    return next_edge;
+}
 
 int Edge::getcap(){
   return m_cap;
 }
 
-void Edge::setcap(int newcap){
-  m_cap=newcap;
+void Edge::setcap(){
+  m_cap=(rand()%MAX_CAP+MIN_CAP);
   return;
 }
 

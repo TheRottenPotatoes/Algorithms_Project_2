@@ -5,6 +5,11 @@
 
 #include <cstddef>
 #include <iostream>
+#include <string>
+#include <stdlib.h> /* srand, rand */
+#include <time.h> /* time */
+#include <stdio.h>
+
 
 class Node;
 
@@ -14,7 +19,7 @@ public:
   //pre:none
   //post:makes a Edge type variable
   //creates a default edge type variable
-  Edge() :m_name("e0"),parent_ptr(NULL),child_ptr(NULL),m_cap(0),m_flow(0){}
+  Edge();
 
   //Constructor
   Edge(std::string, Node*, Node*, int, int);
@@ -45,18 +50,26 @@ public:
   //set where edge goes to
   void setChild(Node newNode);
 
+  void setNextEdge(Edge* next);
+
+  Edge* getNextEdge();
+
   int getcap();
 
-  void setcap(int newcap);
+  void setcap();
 
   int getflow();
 
   void setflow(int newflow);
 
 private:
+  const int MAX_CAP = 20;
+  const int MIN_CAP = 1;
+
   std::string m_name;
   Node *parent_ptr;
   Node *child_ptr;
+  Edge *next_edge;
   int m_cap;
   int m_flow;
 

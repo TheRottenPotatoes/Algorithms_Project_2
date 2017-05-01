@@ -7,7 +7,7 @@ Node::Node(int ID){
 
 //Destructor
 Node::~Node(){
-  cout << "Node " << this -> m_id << "is destroyed" << endl;
+  //cout << "Node " << this -> m_id << "is destroyed" << endl;
 }
 
 //Default Constructor
@@ -24,19 +24,12 @@ void Node::setID(int newDat){
   return;
 }
 
-
-
-void Node::AddEdge(Edge child){
-    m_edges.push_back(child);
-}
-
-
-vector <Edge> Node::GetCopyOfEdge(){
+Edge* Node::getEdges(){
     return m_edges;
-}
+    }
 
+void Node::setEdges(Edge* next){
+    m_edges=next;
+    return;
+    }
 
-
-Edge Node::GetAt(int assigned){
-    return m_edges.at(assigned);
-}

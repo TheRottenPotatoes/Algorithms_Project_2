@@ -22,8 +22,8 @@ public:
   Node(int);
 
   //Destructor
-  ~Node();
 
+  ~Node();
   //Default Constructor
   Node();
 
@@ -37,18 +37,16 @@ public:
   //mutator func for node class
   void setID(int newid);
 
-  void AddEdge(Edge child);
+    Edge* getEdges();
 
-  vector <Edge> GetCopyOfEdge();
-
-  Edge GetAt(int assigned);
+    void setEdges(Edge* next);
 
 
 
 
 private:
   int m_id;
-  vector <Edge> m_edges;
+  Edge* m_edges;
 
 };
 
