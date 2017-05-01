@@ -13,9 +13,6 @@ void Parser(istream& fin,Node List[],int numbNodes){
   int counter=0;
   int edgeCounter=0;
 
-  /*for(int i=0;i<3;i++){
-    holder=fin.get();
-  }*/
     holder=fin.get();
   while(holder=='n' && counter<=numbNodes){
     fin.ignore(6,'[');
@@ -29,19 +26,21 @@ void Parser(istream& fin,Node List[],int numbNodes){
 
   counter=0;
 
-  while(!fin.eof()){
+  while(!fin.eof()){    //something wrong in while loop!
 
 
     Edge* Temp = new Edge();
     fin.ignore(6,'[');
-    fin.ignore(10,'s');
-    fin.ignore(10,' ');
-    source=fin.get();
-    if(counter==(40-source)){
+    fin.ignore(20,'s');
+    fin.ignore(20,' ');
+    fin>>source;
+
+    if(counter==(48-source)){
 
         fin.ignore(10,'t');
         fin.ignore(10,' ');
         getline(fin,numb,'\n');
+
         target=atoi((numb.c_str()));
         Temp->setChild(List[target]);
         Temp->setParent(List[counter]);
@@ -57,7 +56,6 @@ void Parser(istream& fin,Node List[],int numbNodes){
         Temp->setParent(List[counter]);
 
     }
-
     //fin>>// starting node
     fin.ignore(6,'d');
     // fin>>// to this node
@@ -66,9 +64,8 @@ void Parser(istream& fin,Node List[],int numbNodes){
     getline(fin,numb,'"');
     Temp->setname(numb);
 
-
+//cout<<"here";
     List[counter].setEdges(Temp);
-    cout<<counter<<","<<Temp->getname()<<",   ";
   }
 
   cout<<"completed storing the info of the doc.\n";

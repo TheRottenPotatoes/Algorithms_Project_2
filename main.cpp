@@ -16,7 +16,9 @@ int main()
   //replace Graph with Array of Nodes
   cout<<"begin\n";
   Parser(fin,Graph,755);
-  cout<<Graph[44].getID()<<endl;
+  cout<<"here";
+ // cout<<Graph[44].getID()<<endl;
   cout<<"\nfin";
+
   return 0;
 }
