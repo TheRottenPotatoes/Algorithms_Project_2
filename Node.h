@@ -15,7 +15,17 @@ public:
   //pre:none
   //post:makes a Node type variable
   //creates a default node type variable
-  Node() :m_id(-1),m_edges(NULL){}
+  //Comment this out for now.
+  //Node() :m_id(-1),m_edges(NULL){}
+
+  //Constructor
+  Node(int);
+
+  //Destructor
+
+  ~Node();
+  //Default Constructor
+  Node();
 
   //pre:must have node to use on
   //post:returns a int
@@ -27,19 +37,16 @@ public:
   //mutator func for node class
   void setID(int newid);
 
-void AddEdge(Edge child);
+    Edge* getEdges();
 
-vector <Edge> GetCopyOfEdge();
-
-Edge GetAt(int assigned);
+    void setEdges(Edge* next);
 
 
 
 
 private:
-
   int m_id;
-  vector <Edge> m_edges;
+  Edge* m_edges;
 
 };
 

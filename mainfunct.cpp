@@ -1,64 +1,74 @@
 #include "mainfunct.h"
 #include <stdlib.h>
+#include "Edge.h"
+#include "Node.h"
 
 
 
-void Parser(istream& fin,int List[],int numbNodes){
-char holder;
-char numb[10];
-int source;
-int target;
-int counter=0;
-int edgeCounter=0;
+void Parser(istream& fin,Node List[],int numbNodes){
+  char holder;
+  string numb;
+  int source;
+  int target;
+  int counter=0;
+  int edgeCounter=0;
 
-
-
-  for(int i=0;i<3;i++){
+  /*for(int i=0;i<3;i++){
     holder=fin.get();
-  }
-
+  }*/
+    holder=fin.get();
   while(holder=='n' && counter<=numbNodes){
     fin.ignore(6,'[');
     fin.ignore(200,']');
-    fin.ignore(3,'n');
+    fin.get();
+    fin.get();
+    fin.get();
     holder=fin.get();
-      List[counter].setID(counter++);
+    List[counter].setID(counter++);
     }
 
-counter=0;
+  counter=0;
+
+  while(!fin.eof()){
 
 
-  while(holder=='e')){
+    Edge* Temp = new Edge();
     fin.ignore(6,'[');
     fin.ignore(10,'s');
     fin.ignore(10,' ');
     source=fin.get();
     if(counter==(40-source)){
-        List[counter].AddEdge->SetParent(List[counter];
+
         fin.ignore(10,'t');
         fin.ignore(10,' ');
         getline(fin,numb,'\n');
-        target=atoi(numb);
+        target=atoi((numb.c_str()));
+        Temp->setChild(List[target]);
+        Temp->setParent(List[counter]);
 
-        List[counter].GetAt(edgeCounter)->SetChild(List[target]);
-    }
-    else{
+
+    }else{
       ++counter;
-      List[counter].AddEdge->SetParent(List[counter];
         fin.ignore(10,'t');
         fin.ignore(10,' ');
         getline(fin,numb,'\n');
-        target=atoi(numb);
+        target=atoi((numb.c_str()));
+        Temp->setChild(List[target]);
+        Temp->setParent(List[counter]);
 
-        List[counter].GetAt(edgeCounter)->SetChild(List[target]);
-      
     }
-    
-   
+
     //fin>>// starting node
-    fin.ignore(6,' ');
+    fin.ignore(6,'d');
     // fin>>// to this node
-    fin.ignore(9,']');
+    fin.ignore(5,'"');
+
+    getline(fin,numb,'"');
+    Temp->setname(numb);
+
+
+    List[counter].setEdges(Temp);
+    cout<<counter<<","<<Temp->getname()<<",   ";
   }
 
   cout<<"completed storing the info of the doc.\n";

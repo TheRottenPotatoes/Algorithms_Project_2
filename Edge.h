@@ -5,6 +5,7 @@
 
 #include <cstddef>
 #include <iostream>
+#include <string>
 
 class Node;
 
@@ -14,7 +15,16 @@ public:
   //pre:none
   //post:makes a Edge type variable
   //creates a default edge type variable
-  Edge() :m_name("e0"),parent_ptr(NULL),child_ptr(NULL),m_cap(0),m_flow(0){}
+  Edge();
+
+  //Constructor
+  Edge(std::string, Node*, Node*, int, int);
+
+  //Destructor
+  ~Edge();
+
+  //Default Constructor
+  //Edge();
 
   //pre:must have edge to use on
   //post:returns a string
@@ -36,19 +46,23 @@ public:
   //set where edge goes to
   void setChild(Node newNode);
 
-int getcap();
+  void setNextEdge(Edge* next);
 
-void setcap(int newcap);
+  Edge* getNextEdge();
 
-int getflow();
+  int getcap();
 
-void setflow(int newflow);
+  void setcap(int newcap);
 
+  int getflow();
+
+  void setflow(int newflow);
 
 private:
   std::string m_name;
   Node *parent_ptr;
   Node *child_ptr;
+  Edge *next_edge;
   int m_cap;
   int m_flow;
 

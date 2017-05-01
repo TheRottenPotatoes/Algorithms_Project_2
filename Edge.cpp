@@ -1,10 +1,24 @@
 #include "Edge.h"
 
-std::string Edge::getname(){
-  return m_name;
+//Constructor
+Edge::Edge(){
+m_name="place";
+parent_ptr=NULL;
+child_ptr=NULL;
+m_cap=0;
+m_flow=0;
 }
 
-void Edge::setname(std::string newname){
+//Destructor
+Edge::~Edge(){
+  //cout << "Edge " << this -> m_name << " is destroyed" << endl;
+}
+
+string Edge::getname(){
+    return m_name;
+}
+
+void Edge::setname(string newname){
   m_name=newname;
   return;
 }
@@ -27,6 +41,14 @@ Node* Edge::getChild(){
 void Edge::setChild(Node newNode){
   child_ptr = &newNode;
   return;
+}
+void Edge::setNextEdge(Edge* next){
+    next_edge=next;
+    return;
+}
+
+Edge* Edge::getNextEdge(){
+    return next_edge;
 }
 
 int Edge::getcap(){

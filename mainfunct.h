@@ -5,9 +5,7 @@
 #include <fstream>
 #include "Node.h"
 
-void Parser(istream& fin,int ListNodes[],int numbNodes);
 
-
+void Parser(istream& fin,Node ListNodes[],int numbNodes);
 
 #endif
-
