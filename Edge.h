@@ -72,6 +72,8 @@ private:
   Edge *next_edge;
   int m_cap;
   int m_flow;
+  bool m_dest;
+  bool m_ofK;
 
 };
 

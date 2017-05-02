@@ -7,12 +7,12 @@
 #include <iostream>
 
 // Calculates Max Flow and Deletes Path of Highest Flow
-void Static_Algo();
+int Static_Algo(Graph);
 
 // Calculates Max Flow and Deletes Link with highest flow. etc
-void Reactive_Algo();
+int Reactive_Algo(Graph);
 
 // Picks Random Links to Delete
-void Random_Algo();
+int Random_Algo(Graph);
 
 #endif // ALGOFUN_H
