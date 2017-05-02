@@ -1,0 +1,136 @@
+//Pseudo Code for Project 2
+
+include libraries needed
+*
+*
+*etc
+
+include header files needed
+*Node
+*Edge
+*functions
+*etc
+
+
+//Node.h and .cpp
+Node Class{
+*Stuff
+}
+
+//Edge.h and .cpp
+Edge Class{
+*Stuff
+}
+
+//Parser Function/File
+void Parser{
+*Stuff
+}
+
+int main{
+  //initialize variables
+  *counter
+  //755 is given in data txt file. Add 2 for Node S and D
+  *#of Nodes = 757
+  *etc
+
+  create array of Nodes with size of 757;
+  call Parser;
+
+  create dynamic array of edges[];
+
+  while Parser is running{
+    ignore everything except for Node
+    while reading in "Node"{
+      read in "id"
+      set Node[counter] ID to value of counter;
+      counter++;
+    }
+
+    ignore everything except for Edge
+    while reading in "Edge"{
+      read in "source";
+      set Node[source] as source of edge with temp id;
+      read in "target";
+      set Node[target] as target of edge with temp id;
+      read in "id" and set temp edge id as "id";
+
+    }
+  }
+
+  //Create Nodes S and D
+  rand % num of nodes = Node S;
+  rand % num of nodes = Node D
+  if Node S = Node D
+    rand % num of nodes = Node D
+
+  counter = 0;
+  //K_Nodes
+
+  While counter < 20{ //number of K_Nodes can change
+    while counter < 10{
+      rand%# of nodes -> create edge from node to S with cap 20
+      //edges cannot be destroyed that are connected to this node
+      set Node to Bool indestructible
+      counter++;
+    }
+
+    while counter > 10 && <21{
+      rand%# of nodes -> create edge from node to S with cap 20
+      //edges cannot be destroyed that are connected to this node
+      set Node to Bool indestructible
+      counter++;
+    }
+  }
+
+  Static_Approach{
+    find maxFlow of graph;
+      create list of edges starting with highest flow
+    while flow != 0;{
+      //Edges of K_Nodes cannot be deleted so if chosen, pick new Edge
+      //Do not actually delete edge, this just prevents flow
+      set edge to deleted with highest highest flow from list;
+      delete edge from lis;
+      time++;
+    }
+    return time;
+  }
+
+  time = 0;
+  reset Delete bool on Edges;
+
+  Reactive_Approach{
+    While flow != 0{
+      find maxFlow of graph;
+      //Edges of K_Nodes cannot be deleted so if chosen, pick new Edge
+      //Do not actually delete edge, this just prevents flow
+      delete Edge with highest flow;
+      time++;
+    }
+    return time;
+  }
+
+  time = 0;
+  reset Delete bool on Edges;
+
+  Random_Approach{
+    While flow !=0{
+      pick random Edge;
+      if edge is of K_Node
+        pick new Edge;
+      else if edge is already destroyed
+        pick new Edge;
+      else
+        //Do not actually delete edge, this just prevents flow
+        delete edge;
+      time++;
+
+    }
+    return time;
+  }
+
+  time = 0;
+  reset Delete bool on Edges;
+
+  return 0;
+}
