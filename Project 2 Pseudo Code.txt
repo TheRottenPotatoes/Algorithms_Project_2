@@ -89,7 +89,8 @@ int main{
     while flow != 0;{
       //Edges of K_Nodes cannot be deleted so if chosen, pick new Edge
       //Do not actually delete edge, this just prevents flow
-      set edge to deleted with from list;
+      set edge to deleted with highest highest flow from list;
+      delete edge from lis;
       time++;
     }
     return time;
