@@ -12,6 +12,7 @@ void Parser(istream& fin,Node List[],int numbNodes){
   int target;
   int counter=0;
   int edgeCounter=0;
+  cout << "parser started" << endl;
 
     holder=fin.get();
   while(holder=='n' && counter<=numbNodes){
@@ -70,5 +71,9 @@ void Parser(istream& fin,Node List[],int numbNodes){
 
   cout<<"completed storing the info of the doc.\n";
 
+
+
+//  delete[] List;
+  cout << " deleted \n";
   return;
 }
