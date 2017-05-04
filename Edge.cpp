@@ -55,8 +55,8 @@ int Edge::getcap(){
   return m_cap;
 }
 
-void Edge::setcap(int newcap){
-  m_cap=newcap;
+void Edge::setcap(){
+  m_cap=(rand()%MAX_CAP+MIN_CAP);
   return;
 }
 

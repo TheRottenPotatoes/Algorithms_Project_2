@@ -8,6 +8,7 @@ Node::Node(int ID){
 //Destructor
 Node::~Node(){
   //cout << "Node " << this -> m_id << "is destroyed" << endl;
+  //delete[] Node;
 }
 
 //Default Constructor

@@ -6,6 +6,10 @@
 #include <cstddef>
 #include <iostream>
 #include <string>
+#include <stdlib.h> /* srand, rand */
+#include <time.h> /* time */
+#include <stdio.h>
+
 
 class Node;
 
@@ -52,19 +56,24 @@ public:
 
   int getcap();
 
-  void setcap(int newcap);
+  void setcap();
 
   int getflow();
 
   void setflow(int newflow);
 
 private:
+  const int MAX_CAP = 20;
+  const int MIN_CAP = 1;
+
   std::string m_name;
   Node *parent_ptr;
   Node *child_ptr;
   Edge *next_edge;
   int m_cap;
   int m_flow;
+  bool m_dest;
+  bool m_ofK;
 
 };
 
